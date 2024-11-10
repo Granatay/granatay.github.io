@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    $to = "xogan37748@cironex.com"; //swój adres e-mail
+    $to = "  "; //swój adres e-mail
     $subject = "Nowa wiadomość od $name";
     $body = "Imię: $name\nEmail: $email\nWiadomość:\n$message";
     $headers = "From: $email";
