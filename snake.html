@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="autor tej strony">
+    <title>Blog o Książkach - Gra w Węża</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="roundedborder"><span class="animowanytext">Blog o Książkach - Gra w Węża</span></div>
+    </header>
+    <nav>
+        <a href="strona.html">Strona Główna</a>
+        <a href="informacje.html">Informacje</a>
+        <a href="Galeria.html">Galeria</a>
+        <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <div class="container">
+        <aside class="asidem">
+            <h2>Najlepszy wynik</h2>
+            <p id="bestScore">0</p>
+            <button class="button" onclick="resetBestScore()">Resetuj najlepszy wynik</button>
+        </aside>
+        <main class="clickem3">
+            <div id="start-screen">
+                <p>Witaj w grze w węża!</p>
+                <button class="button" onclick="startGame()">Start</button>
+            </div>
+            <canvas id="gameCanvas" width="600" height="600"></canvas>
+            <div id="game-over">
+                <p>Koniec gry!</p>
+                <p id="finalScore"></p>
+                <button class="button" onclick="restartGame()">Zagraj ponownie</button>
+            </div>
+        </main>
+    </div>
+    <footer>
+        <p>2024 Blog o Książkach</p>
+    </footer>
+
+    <script>
+        // Zmienna przechowująca najlepszy wynik
+        let bestScore = localStorage.getItem('bestScore') || 0;
+        document.getElementById('bestScore').textContent = bestScore;
+
+        // Parametry gry
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const gridSize = 20;
+        let snake = [{ x: 300, y: 300 }];
+        let direction = { x: 0, y: 0 };
+        let food = { x: getRandomCoord(), y: getRandomCoord() };
+        let score = 0;
+        let gameInterval;
+
+        function getRandomCoord() {
+            return gridSize * Math.floor(Math.random() * (canvas.width / gridSize));
+        }
+
+        function drawGame() {
+            const head = { x: snake[0].x + direction.x * gridSize, y: snake[0].y + direction.y * gridSize };
+            snake.unshift(head);
+
+            // Sprawdzenie, czy wąż zjadł jedzenie
+            if (head.x === food.x && head.y === food.y) {
+                score++;
+                food = { x: getRandomCoord(), y: getRandomCoord() };
+                if (score > bestScore) {
+                    bestScore = score;
+                    localStorage.setItem('bestScore', bestScore);
+                    document.getElementById('bestScore').textContent = bestScore;
+                }
+            } else {
+                snake.pop();
+            }
+
+            // Sprawdzenie kolizji
+            if (head.x < 0 || head.y < 0 || head.x >= canvas.width || head.y >= canvas.height || snake.slice(1).some(segment => segment.x === head.x && segment.y === head.y)) {
+                gameOver();
+            }
+
+            // Rysowanie tła i elementów
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'green';
+            snake.forEach(segment => ctx.fillRect(segment.x, segment.y, gridSize, gridSize));
+            ctx.fillStyle = 'red';
+            ctx.fillRect(food.x, food.y, gridSize, gridSize);
+
+            // Rysowanie siatki dla estetyki
+            ctx.strokeStyle = '#ddd';
+            for (let i = 0; i < canvas.width; i += gridSize) {
+                ctx.beginPath();
+                ctx.moveTo(i, 0);
+                ctx.lineTo(i, canvas.height);
+                ctx.stroke();
+            }
+            for (let j = 0; j < canvas.height; j += gridSize) {
+                ctx.beginPath();
+                ctx.moveTo(0, j);
+                ctx.lineTo(canvas.width, j);
+                ctx.stroke();
+            }
+        }
+
+        function gameOver() {
+            clearInterval(gameInterval);
+            document.getElementById('gameCanvas').style.display = 'none';
+            document.getElementById('game-over').style.display = 'block';
+            document.getElementById('finalScore').textContent = `Twój wynik: ${score}`;
+        }
+
+        function startGame() {
+            document.getElementById('start-screen').style.display = 'none';
+            document.getElementById('gameCanvas').style.display = 'block';
+            document.getElementById('game-over').style.display = 'none';
+            score = 0;
+            snake = [{ x: 300, y: 300 }];
+            direction = { x: 0, y: 0 };
+            food = { x: getRandomCoord(), y: getRandomCoord() };
+            gameInterval = setInterval(drawGame, 100);
+        }
+
+        function restartGame() {
+            startGame();
+        }
+
+        function resetBestScore() {
+            bestScore = 0;
+            localStorage.setItem('bestScore', bestScore);
+            document.getElementById('bestScore').textContent = bestScore;
+        }
+
+        document.addEventListener('keydown', event => {
+            if (event.key === 'ArrowUp' && direction.y === 0) {
+                direction = { x: 0, y: -1 };
+            } else if (event.key === 'ArrowDown' && direction.y === 0) {
+                direction = { x: 0, y: 1 };
+            } else if (event.key === 'ArrowLeft' && direction.x === 0) {
+                direction = { x: -1, y: 0 };
+            } else if (event.key === 'ArrowRight' && direction.x === 0) {
+                direction = { x: 1, y: 0 };
+            }
+        });
+    </script>
+</body>
+</html>

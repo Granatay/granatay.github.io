@@ -1,0 +1,439 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-image: url("");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #333;
+}
+
+header, nav, footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+}
+
+nav a {
+    color: #fff;
+    margin: 15px;
+    text-decoration: none;
+	
+	
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+aside {
+    margin: 0;
+    width: 25%;
+    padding: 15px;
+    border-right: 2px solid #333;
+    background-color: #F2E6D4;
+    padding-top: 0;
+}
+
+main {
+    width: 75%;
+    padding: 15px;
+    height: 970px;
+}
+
+footer {
+    margin: 0;
+    padding: 10px 0;
+}
+
+.Opis {
+    text-align: center;
+}
+
+.opis1
+{
+  width: 500px;
+  height: 500px;
+  perspective: 1000px;
+}
+.image 
+{
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+.mein
+{
+  width: 500px;
+  height: 500px;
+  perspective: 1000px;
+}
+.image 
+{
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+.harry
+{
+  width: 400px;
+  height: 400px;
+  perspective: 1000px;
+}
+.image 
+{
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+.jurassic
+{
+  width: 400px;
+  height: 400px;
+  perspective: 1000px;
+}
+.image 
+{
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+.animowanytext {
+    display: inline-block;
+    color: white;
+    transition: color 2s ease;
+}
+
+.animowanytext:hover {
+    color: gold;
+}
+
+.gallery {
+    width: 80%;
+    margin: 0 auto; 
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+img {
+    width: 30%; 
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+
+@media (max-width: 600px) {
+    img {
+        width: 100%;
+        margin-bottom: 10px; 
+    }
+}
+
+
+.maingaleria {
+	width: 75%;
+    padding: 15px;
+    height: 980px;
+	overflow-y: auto;
+	width: 75%;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #D9BA8C;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+	border: 2px solid #333;
+}
+
+.roundedborder {
+    padding: 15px;
+    border: 2px solid #3498db;
+    border-radius: 15px;
+    background-color: #333;
+    font-size: 18px;
+    color: #333333;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    width: 100%;
+    margin: auto;
+}
+.clickem{
+	width: 75%; 
+    padding: 20px; 
+    border-radius: 15px;
+    background-color: #D9BA8C; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+	border: 2px solid #333;
+	height: 1020px;
+}
+
+.asidem {
+	width: 25%; 
+    padding: 20px; 
+    border-radius: 15px;
+    background-color: #f9f9f9; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.linkin {
+    color: blue; 
+    text-decoration: none;
+    transition: color 0.3s ease; 
+}
+
+.linkin:hover {
+    color: red; 
+}
+
+a {
+    color: #000000; 
+    text-decoration: none;
+    transition: color 0.3s ease; 
+}
+
+a:hover {
+    color: red; 
+}
+
+.fbe {
+	text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #4cae4c;
+}
+
+.mein {
+	float: right;
+	margin-right: 115px;
+}
+
+.opis1 {
+	float: right;
+	margin-right: 45px;
+}
+
+.forte
+{
+  width: 500px;
+  height: 500px;
+  perspective: 1000px;
+}
+.image 
+{
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+.forte {
+	float: right;
+	margin-right: 45px;
+}
+
+.polecane {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.roundedborder {
+	font-weight: bold;
+	font-size: 22px;
+}
+
+.clickem2, .maingaleria {
+	width: 75%; 
+    padding: 20px; 
+    border-radius: 15px;
+    background-color: #D9BA8C; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+	border: 2px solid #333;
+	height: 1020px;
+}
+
+.text10 {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.text11 {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.listan {
+	font-weight: bold;
+	text-decoration: underline;	
+}
+
+.text12 {
+	font-weight: bold;
+	text-decoration: underline;
+	font-size: 25px;
+}
+
+.FooterGalerii {
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+#gameCanvas {
+            border: 10px solid;
+            border-image: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+            border-image-slice: 1;
+            display: block;
+            margin: 20px auto;
+            background-color: #f0f8ff;
+            animation: rainbow-border 3s linear infinite;
+        }
+
+        @keyframes rainbow-border {
+            0% { border-image-source: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet); }
+            16.67% { border-image-source: linear-gradient(90deg, orange, yellow, green, blue, indigo, violet, red); }
+            33.33% { border-image-source: linear-gradient(90deg, yellow, green, blue, indigo, violet, red, orange); }
+            50% { border-image-source: linear-gradient(90deg, green, blue, indigo, violet, red, orange, yellow); }
+            66.67% { border-image-source: linear-gradient(90deg, blue, indigo, violet, red, orange, yellow, green); }
+            83.33% { border-image-source: linear-gradient(90deg, indigo, violet, red, orange, yellow, green, blue); }
+            100% { border-image-source: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet); }
+        }
+
+        aside {
+            background-color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        .score {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        #game-over {
+            display: none;
+            font-size: 36px;
+            color: red;
+            text-align: center;
+            margin-top: 20px;
+        }
+        #start-screen {
+            text-align: center;
+            font-size: 24px;
+            padding: 30px;
+            background-color: #fff;
+            border: 3px solid #333;
+            margin: 20px auto;
+            display: block;
+        }
+        .button {
+            display: inline-block;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .button:hover {
+            background-color: #555;
+        }
+		
+.clickem3 {
+	width: 75%; 
+    padding: 20px; 
+    border-radius: 15px;
+    background-color: #D9BA8C; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+	border: 2px solid #333;
+	height: 985px;
+}
+
+.snake {
+	font-weight: bold;
+}
