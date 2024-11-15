@@ -1,151 +1,139 @@
-
+/* Base styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     background-color: #f4f4f4;
+    color: #333;
 }
 
 header {
-    background-color: #2a2a2a;
-    color: white;
-    padding: 20px;
+    background-color: #6fa3ef;
+    padding: 15px;
     text-align: center;
 }
 
 header .roundedborder {
     border-radius: 10px;
+    background-color: #fff;
     padding: 10px;
 }
 
 header .animowanytext {
-    font-size: 2rem;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
 }
 
 nav {
     background-color: #333;
-    text-align: center;
     padding: 10px;
+    text-align: center;
 }
 
 nav a {
     color: white;
-    margin: 0 15px;
     text-decoration: none;
-    font-size: 1.2rem;
+    margin: 0 15px;
+    font-size: 16px;
 }
 
 nav a:hover {
     text-decoration: underline;
 }
 
-footer {
-    background-color: #2a2a2a;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    margin-top: 20px;
-}
-
-
 .container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 20px;
+    margin: 20px;
 }
 
-aside, main {
-    width: 48%;
-    margin-bottom: 20px;
+/* Sidebar styling */
+.asidem {
+    flex: 1 1 300px;
+    margin-right: 20px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-aside h2 {
-    font-size: 1.5rem;
-    color: #333;
+.asidem h2 {
+    font-size: 20px;
+    color: #444;
 }
 
 .asidem ul {
-    list-style: none;
+    list-style-type: none;
     padding: 0;
 }
 
-.asidem ul li {
+.asidem li {
     margin: 10px 0;
 }
 
-.asidem ul li a {
+.asidem .linkin {
     text-decoration: none;
-    color: #007bff;
-    font-size: 1rem;
+    color: #0066cc;
 }
 
-.asidem ul li a:hover {
+.asidem .linkin:hover {
     text-decoration: underline;
 }
 
-main h2 {
-    font-size: 2rem;
+/* Main content styling */
+.clickem {
+    flex: 2 1 600px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.clickem h2 {
+    font-size: 24px;
     color: #333;
 }
 
-main .gallerym, .gallery {
+.clickem p {
+    line-height: 1.6;
+    font-size: 16px;
+    color: #555;
+}
+
+.clickem .fbe {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Gallery styling */
+.gallerym {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
+    margin-top: 20px;
 }
 
-main .gallerym img, .gallery img {
-    width: 30%;
-    margin-bottom: 20px;
-    max-height: 200px;
-    object-fit: cover;
-}
-
-
-form {
-    display: flex;
-    flex-direction: column;
+.gallerym img {
     width: 100%;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-label {
-    font-size: 1rem;
-    margin-bottom: 5px;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
+    max-width: 200px;
+    height: auto;
     border-radius: 5px;
 }
 
-button {
-    background-color: #007bff;
+/* Footer styling */
+footer {
+    background-color: #333;
     color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.2rem;
+    text-align: center;
+    padding: 10px 0;
 }
 
-button:hover {
-    background-color: #0056b3;
-}
-
-
+/* Media queries for responsive design */
 @media (max-width: 768px) {
     nav a {
-        font-size: 1rem;
         margin: 0 10px;
+        font-size: 14px;
     }
 
     .container {
@@ -153,44 +141,45 @@ button:hover {
         align-items: center;
     }
 
-    aside, main {
-        width: 100%;
+    .asidem {
+        flex: 1 1 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
     }
 
-    header .animowanytext {
-        font-size: 1.5rem;
+    .clickem {
+        flex: 1 1 100%;
     }
 
-    main .gallerym img, .gallery img {
-        width: 45%;
-        margin-bottom: 15px;
+    .gallerym {
+        flex-direction: column;
+        align-items: center;
     }
 
-    footer p {
-        font-size: 1rem;
+    .gallerym img {
+        max-width: 100%;
+        margin-bottom: 10px;
     }
 }
 
-
 @media (max-width: 480px) {
     header .animowanytext {
-        font-size: 1.2rem;
+        font-size: 20px;
     }
 
-    main h2 {
-        font-size: 1.5rem;
+    nav {
+        padding: 15px;
     }
 
-    main .gallerym img, .gallery img {
-        width: 100%;
-        margin-bottom: 10px;
+    .clickem h2 {
+        font-size: 20px;
     }
 
-    nav a {
-        font-size: 0.9rem;
+    .clickem p {
+        font-size: 14px;
     }
 
-    button {
-        font-size: 1rem;
+    .gallerym img {
+        max-width: 150px;
     }
 }
