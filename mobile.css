@@ -1,0 +1,180 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header .roundedborder {
+    border-radius: 10px;
+    border: 2px solid #fff;
+    padding: 5px 15px;
+}
+
+header .animowanytext {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav {
+    background-color: #333;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+}
+
+nav a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    gap: 20px;
+}
+
+.asidem {
+    flex: 1;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.asidem h2 {
+    text-align: center;
+    font-size: 20px;
+}
+
+.asidem ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.asidem ul li {
+    margin-bottom: 10px;
+}
+
+.asidem ul li a {
+    color: #333;
+    text-decoration: none;
+}
+
+.asidem ul li a:hover {
+    color: #0077cc;
+}
+
+main {
+    flex: 3;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+main h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+main .fbe {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.gallerym .row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.gallerym img {
+    width: 32%;
+    border-radius: 8px;
+}
+
+/* Footer styling */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Mobile specific styles */
+@media only screen and (max-width: 768px) {
+    header .animowanytext {
+        font-size: 20px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .container {
+        flex-direction: column;
+        margin: 10px;
+    }
+
+    .asidem {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    main {
+        width: 100%;
+    }
+
+    .gallerym .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallerym img {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    nav a {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .asidem h2, main h2, .fbe {
+        font-size: 18px;
+    }
+
+    .gallerym img {
+        width: 90%;
+    }
+}
