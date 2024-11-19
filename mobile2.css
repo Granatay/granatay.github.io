@@ -51,8 +51,8 @@ nav a:hover {
     flex: 1 1 300px;
     margin-right: 20px;
     background-color: #fff;
-    padding: 15px;
-    border-radius: 8px;
+    padding: 125px;
+    border-radius: 80px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -86,7 +86,7 @@ nav a:hover {
     color: #555;
 }
 
-.mein, .opis1, .forte {
+.mein, .opis1 {
     margin-top: 20px;
     text-align: center;
 }
@@ -156,3 +156,21 @@ footer {
         font-size: 14px;
     }
 }
+
+.forte, .opis1, .mein {
+	margin-top: 20px;
+    float: left;
+	width: 200px;
+	width: 80%;
+	height: 200px;
+	display: flex;
+	flex-direction: column; 
+	align-items: center;   
+	gap: 20px;              
+	margin: 20px;
+}
+
+.mein, .forte, .opis1 {
+  margin-bottom: 130px; 
+}
+
